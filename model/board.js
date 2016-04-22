@@ -18,6 +18,14 @@ board.prototype.get = function (name){
 	return this.data[name];
 };
 
+board.prototype.findById = function (id, next){
+	boardRepository.findById(id, function(err, board) {
+		if (err) throw err;
+		// show the one board
+		next(board)
+	});
+};
+
 board.prototype.findAllNames = function(next){
 
 	boardRepository.find({},{name:1}, function(err, boards){
