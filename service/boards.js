@@ -3,8 +3,8 @@ var Board = require('../model/board.js');
 
 var boards = {
 	getById: function(req, res){
-		var board = new Board(req.query);
-		board.findById(board.get("_id"), function(returnedBoard){
+		var id = req.query;
+		new Board().findById(id, function(returnedBoard){
 			res.json(returnedBoard);
 		})
 	},
