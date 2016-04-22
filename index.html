@@ -1,6 +1,23 @@
 <html>
-<header><title>This is title</title></header>
-<body>
-Hello world
+<head>
+	<title>Kanban</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+	<script src="js/kanban.js"></script>
+
+</head>
+<header><title>Kanban</title></header>
+<body ng-app="kb">
+  <div ng-controller="TestController"><h2><h2></div>
+  <div>
+  <div>Add new tasks</div>
+  <table><th>Task Name</th><th>Task Description</th>
+  <tr><td><input ng-model="newTaskName" name="New Task Name"></input></td>
+  <td><input ng-model="newTaskDescription" name="New Task Description"></input></td>
+  </div>
+  <div kanban-table table-name="To Do" task-status="getToDo"></div>
+  <div kanban-table table-name="Doing" task-status="getDoing"></div>
+  <div kanban-table table-name="Done" task-status="getDone"></div>
 </body>
 </html>
