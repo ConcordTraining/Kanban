@@ -10,6 +10,4 @@ router.get('/', function(req, res, next) {
 
 router.get('/getById', boards.getById);
 
-router.get('/getBoards', boards.getAllNames);
-
 module.exports = router;
